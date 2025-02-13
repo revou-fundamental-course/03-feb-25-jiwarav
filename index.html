@@ -6,12 +6,14 @@
     <!-- Tag untuk responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Konversi Suhu</title>
+    <link rel="icon" type="image/x-icon" href="assets\favicon.jpg">
 
     <!-- Link CSS -->
      <link rel="stylesheet" href="css\styles.css">
 </head>
 
 <body>
+    <!-- Nama Website -->
     <header class="main-header">
         <h1>Konversi Suhu</h1>
     </header>
@@ -29,14 +31,15 @@
          <section>
             <form>
                 <div class="input-group">
-                    <label for="input-suhu">Celcius</label>
+                    <label id="label-input" for="input-suhu">Celcius (&deg;C)</label>
                     <input type="number" id="input-suhu">
                 </div>
 
+                <!-- Tombol -->
                 <div class="button-group">
-                    <button class="bt-konversi">Konversi</button>
-                    <button class="bt-reset">Reset</button>
-                    <button class="bt-reverse">Reverse</button>
+                    <button class="bt-konversi" type="button" onclick="konversiSuhu()">Konversi</button>
+                    <button class="bt-reset" type="button" onclick="resetField()">Reset</button>
+                    <button class="bt-reverse" type="button" onclick="changeLabel()">Reverse</button>
                 </div>
             </form>
          </section>
@@ -44,7 +47,7 @@
          <!-- Hasil Konversi -->
          <section>
             <div class="input-group">
-                <label for="hasil-konversi">Fahrenheit</label>
+                <label id="label-output" for="hasil-konversi">Fahrenheit (&deg;F)</label>
                 <input type="text" id="hasil-konversi" readonly>
             </div>
          </section>
@@ -60,16 +63,15 @@
          <!-- Penjelasan Rumus Konversi Suhu -->
           <section>
             <header>
-                <h3>Cara Konversi Dari Celcius(&deg;C) ke Fahrenheit(&deg;F)</h3>
+                <h3 id="judul-rumus">Cara Konversi Dari <span id="temp">Celcius(&deg;C)</span> ke Fahrenheit(&deg;F)</h3>
             </header>
 
             <hr>
 
             <article>
-                <p>Suhu <span class="remark">S</span> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <span class="remark">S</span> dalam derajat
-                Celcius (&deg;C) kali 9/5 tambah 32.</p>
-                <p><span class="remark">S</span><sub>(&deg;F)</sub> = (<span class="remark">S</span><sub>(&deg;C)</sub> x 9/5) + 32 <br> atau <br>
-                    <span class="remark">S</span><sub>(&deg;F)</sub> = (<span class="remark">S</span><sub>(&deg;C)</sub> x 1.8) + 32</p>
+                <p id="penjelasan-satu">Suhu <b>S</b> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <b>S</b> dalam derajat <span id="temp">Celcius(&deg;C)</span> kali 9/5 tambah 32.</p>
+                <p id="penjelasan-dua"><b>S</b>(&deg;F)</sub> = (<b>S</b><sub>(&deg;C)</sub> x 9/5) + 32 <br> atau <br>
+                    <b>S</b><sub>(&deg;F)</sub> = (<b>S</b><sub>(&deg;C)</sub> x 1.8) + 32</p>
             </article>
           </section>
     </main>
@@ -78,6 +80,8 @@
         <p class="watermark">Made by Jiwa@2025</p>
     </footer>
     
+    <script src="js\script.js"></script>
+
 </body>
 
 </html>
